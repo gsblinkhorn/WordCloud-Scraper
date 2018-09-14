@@ -4,8 +4,8 @@ from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 stopwords = set(STOPWORDS)
 
 with open('stopwords.txt') as f:
-       for word in f.read().split():
-              stopwords.add(word)
+	for word in f.read().split():
+		stopwords.add(word)
 
 text = ""
 with open('output.txt', 'r') as f:
