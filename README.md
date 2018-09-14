@@ -9,3 +9,11 @@ named output.txt
 ## Generate_wc.py
 This script opens the output.txt file and feeds its contents to the WordCloud module. The Word Cloud image is saved to the
 working directory as wordcloud.png
+
+## Example
+### Keywords: software developer
+### Location: Atlanta, GA
+
+<p align="center">
+  <img src="wordcloud.png">
+</p>
