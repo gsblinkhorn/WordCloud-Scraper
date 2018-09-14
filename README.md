@@ -2,7 +2,7 @@
 Scrapes careerbuilder.com for job postings and generates a Word Cloud of the contents of those postings. 
 
 ## Scraper.py
-This script will scrape every job posted returned by the {keywords, location} query and output every word into a file
+This script will scrape every job posting returned by the {keywords, location} query and output every word into a file
 named output.txt. The postings retrieved can be modified by changing the keywords and location variables in the scraper.py script.
 
 ## Generate_wc.py
