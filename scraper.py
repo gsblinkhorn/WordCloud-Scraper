@@ -1,10 +1,5 @@
-from bs4 import BeautifulSoup
-from bs4 import NavigableString
+from bs4 import BeautifulSoup, NavigableString
 import requests
-from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
 
 # get-request with keywords and location arguments
 main_link = 'https://www.careerbuilder.com/jobs'
@@ -13,8 +8,10 @@ location = 'Atlanta, GA'
 
 payload = {'keywords': keywords, 'location': location}
 
-content = requests.get(main_link, params=payload).content
-soup = BeautifulSoup(content.decode('utf-8'), features="html.parser")
+content = requests.get(main_link, params=payload)
+content = content.content.decode('utf-8')
+
+soup = BeautifulSoup(content, features="html.parser")
 
 # get each job posting
 headers = soup.find_all("h2", {'class': ['job-title', 'show-for-medium-up']})
@@ -25,11 +22,35 @@ for h2 in headers:
 	a = h2.find("a")
 	links.append(a.attrs['href'])
 
-# eleiminate duplicate links
-links = set(links)
+# get list of secondary urls
+div = soup.find_all("div", {'class' : ['pager']})
+url_prefix = ""
+max_num = 0
+for d in div:
+	a_tags = d.find_all("a")
+	for i,a in enumerate(a_tags):
+		if i == 1:
+			url_prefix = a.attrs['href']
+		if i == 6:
+			max_num = int(str(a.string.strip()))
+
+secondary_urls = []
+for index in range(2,max_num+1):
+	secondary_urls.append(url_prefix + "?page_number=" + str(index))
+	
+for url in secondary_urls:
+	print(url)
+	content = requests.get(url).content.decode('utf-8')
+	soup = BeautifulSoup(content, features="html.parser")
+	headers = soup.find_all("h2", {"class": ["job-title", "show-for-medium-up"]})
+	
+	for h2 in headers:
+		a = h2.find("a")
+		links.append(a.attrs['href'])
+
 main_link = "https://www.careerbuilder.com"
 text = ""
-
+links = set(links)
 # scrap each link for content
 for i, link in enumerate(links):
 	print("Scraping Link " + str(i))
@@ -50,11 +71,6 @@ for i, link in enumerate(links):
 		for word in words:
 			text = text + word + " "
 
-# transform string into wordcloud
-stopwords = set(STOPWORDS)
-with open('stopwords.txt') as f:
-	for word in f.read().split():
-		stopwords.add(word)
+with open("output.txt", "w") as f:
+	f.write(text)
 
-wordcloud = WordCloud(stopwords=stopwords, background_color="white", max_words=50).generate(text)
-wordcloud.to_file("wordcloud.png")
