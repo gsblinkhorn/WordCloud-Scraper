@@ -3,8 +3,8 @@ import requests
 
 # get-request with keywords and location arguments
 main_link = 'https://www.careerbuilder.com/jobs'
-keywords = 'software developer'
-location = 'Atlanta, GA'
+keywords = 'registered nurse'
+location = 'New York, NY'
 
 payload = {'keywords': keywords, 'location': location}
 

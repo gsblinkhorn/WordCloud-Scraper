@@ -16,4 +16,5 @@ wordcloud = WordCloud(stopwords=stopwords,
 			max_words=100,
 			width=800,
 			height=600).generate(text)
-wordcloud.to_file("wordcloud.png")
+file_name = input("Name to save your file as: ")
+wordcloud.to_file(file_name + ".png")
