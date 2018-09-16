@@ -22,11 +22,11 @@ Given the query below, careerbuilder.com returns ~300 job listings. The scraper 
 ### Keywords: registered nurse
 ### Location: New York, NY
 <p align="center">
-  <img src="https://s3.amazonaws.com/gb-github-image-hosting/registered-nurse.png">
+  <img src="">
 </p>
 
 ### Keywords: accountant
 ### Location: San Francisco, CA
 <p align="center">
-  <img src="https://s3.amazonaws.com/gb-github-image-hosting/accountant.png">
+  <img src="">
 </p>
