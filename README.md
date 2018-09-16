@@ -11,6 +11,7 @@ It also reads stopwords in from the stopwords.txt file to prevent them from bein
 The Word Cloud image is saved to the working directory as wordcloud.png
 
 ## Example
+Given the query below, careerbuilder.com returns ~300 job listings. The scraper reads each of these listings in generating its output.txt document. By using this tool, you can get a visualization of what employers are looking for for certain positions.
 ### Keywords: software developer
 ### Location: Atlanta, GA
 
