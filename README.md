@@ -12,9 +12,21 @@ The Word Cloud image is saved to the working directory as wordcloud.png
 
 ## Example
 Given the query below, careerbuilder.com returns ~300 job listings. The scraper reads each of these listings in generating its output.txt document. By using this tool, you can get a visualization of what employers are looking for for certain positions.
+
 ### Keywords: software developer
 ### Location: Atlanta, GA
-
 <p align="center">
-  <img src="wordcloud.png">
+  <img src="https://s3.amazonaws.com/gb-github-image-hosting/software-developer.png">
+</p>
+
+### Keywords: registered nurse
+### Location: New York, NY
+<p align="center">
+  <img src="https://s3.amazonaws.com/gb-github-image-hosting/registered-nurse.png">
+</p>
+
+### Keywords: accountant
+### Location: San Francisco, CA
+<p align="center">
+  <img src="https://s3.amazonaws.com/gb-github-image-hosting/accountant.png">
 </p>
