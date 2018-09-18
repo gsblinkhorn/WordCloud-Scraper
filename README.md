@@ -17,7 +17,7 @@ By using this tool, you can get a visualization of what employers are looking fo
 ### Location: Atlanta, GA
 
 <p align="center">
-  <img src="https://s3.amazonaws.com/gb-github-image-hosting/software-developer.png">
+  <img width="600px" src="https://s3.amazonaws.com/gb-github-image-hosting/software-developer.png">
 </p>
 
 
@@ -25,7 +25,7 @@ By using this tool, you can get a visualization of what employers are looking fo
 ### Location: New York, NY
 
 <p align="center">
-  <img src="https://s3.amazonaws.com/gb-github-image-hosting/registered-nurse.png">
+  <img width="600px" src="https://s3.amazonaws.com/gb-github-image-hosting/registered-nurse.png">
 </p>
 
 
@@ -33,5 +33,5 @@ By using this tool, you can get a visualization of what employers are looking fo
 ### Location: San Francisco, CA
 
 <p align="center">
-  <img src="https://s3.amazonaws.com/gb-github-image-hosting/accountant.png">
+  <img width="600px" src="https://s3.amazonaws.com/gb-github-image-hosting/accountant.png">
 </p>
